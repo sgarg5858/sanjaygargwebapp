@@ -1,0 +1,17 @@
+<div [ngClass]="{'container':true,'darkBackground':darkModeOn}">
+
+    <div class="centerContent">
+        <h1  [ngClass]="{'whiteColor':darkModeOn,'myProjectHeading':true}">
+           {{myProjectHeading}}
+            <!-- <mat-icon>code</mat-icon> -->
+        </h1>
+    </div>
+    <div>
+        <div class="projectsContainer" >
+
+            <app-myproject [project]="project" *ngFor="let project of myProjects | async"></app-myproject>
+          
+        </div>
+    </div>
+
+</div>

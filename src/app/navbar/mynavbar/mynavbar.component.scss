@@ -1,0 +1,18 @@
+.reversedFlexbox{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+}
+.profilepicture{
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 4px solid white;
+}
+.addingStylesToMenuIcon{
+    cursor: pointer;
+}
+mat-toolbar{
+    min-height: 64px;
+    height: 64px;
+    max-height: 64px;
+}

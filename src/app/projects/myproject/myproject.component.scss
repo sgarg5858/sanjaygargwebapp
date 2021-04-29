@@ -1,0 +1,94 @@
+mat-card-title{
+    color: dodgerblue;
+}
+details{
+    margin-top: 10px;
+}
+summary{
+    color: dodgerblue;
+    font-size: 16px;
+}
+
+
+.projectcard{
+    box-sizing: border-box;
+    box-shadow: 0px 0px 50px grey;
+    min-height: 130px !important;
+    border-radius: 8px;
+    border-left:  5px solid dodgerblue;
+    width: 400px ;
+    margin: 20px ;
+}
+
+@media screen and (min-width:1170px) and (max-width:1320px) {
+    .projectcard{
+        width: 350px;
+    }
+}
+@media screen and (min-width:1100px) and (max-width:1169px) {
+    .projectcard{
+        width: 320px;
+    }
+}
+
+
+@media screen and (min-width:900px) and (max-width:1099) {
+    .projectcard{
+        width: 420px;
+    }
+}
+
+@media screen and (min-width:700px) and (max-width:899px) {
+    .projectcard{
+        width:  500px;
+    }
+}
+
+@media screen and (min-width:600px) and (max-width:699px) {
+    .projectcard{
+        width: 450px;
+    }
+}
+
+@media screen and (min-width:450px) and (max-width:599px) {
+    .projectcard{
+        width:  400px;
+    }
+}
+@media screen and (min-width:350px) and (max-width:449px) {
+    .projectcard{
+        width:  320px;
+    }
+}
+
+.moreInfo{
+    margin: 5px;
+    margin-left: 20px;
+}
+.skillcard{
+    white-space: nowrap;
+    padding: 8px;
+    margin: 5px;
+    background-color: dodgerblue;
+    color: white;
+}
+
+.skillcard:hover{
+    transform: scale(1.1);
+    transition-duration: .5s;
+    transition-timing-function: linear;
+}
+
+.skill-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    margin: 5px;
+    margin-left: 20px;
+}
+.role-list{
+    list-style: decimal;
+}
+.role-item{
+}

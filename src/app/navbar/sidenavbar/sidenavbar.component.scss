@@ -1,0 +1,19 @@
+
+.addingCursor{
+    cursor: pointer;
+}
+.yellowColor{
+    color: rgb(255, 193, 7);
+    cursor: pointer;
+    // padding-left: 80px;
+}
+.blueColor{
+    color:blue;
+    cursor: pointer;
+}
+.centeringContent{
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

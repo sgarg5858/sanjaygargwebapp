@@ -1,0 +1,28 @@
+
+<mat-sidenav-container [class]="darkModeOn ? 'darkMode' : '' ">
+    <mat-sidenav 
+    [opened]="isSideNavOpen"
+    mode="over"
+    position="end" 
+    (closed)="toggleSideNav('close')"
+    >
+    <!-- (closed) is important when user closes side nav by clicking outside  -->
+    <app-sidenavbar 
+    (sideNavClosed)="toggleSideNav('close')"
+    (toggleDarkMode)="toggleDarkMode($event)"
+    [darkModeOn]="darkModeOn"
+    ></app-sidenavbar>
+</mat-sidenav>
+
+    <mat-sidenav-content>
+
+        <app-mynavbar 
+        [isSideNavOpen]="isSideNavOpen"
+        (sideNavOpened)="toggleSideNav('open')"
+        ></app-mynavbar>
+
+
+       
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

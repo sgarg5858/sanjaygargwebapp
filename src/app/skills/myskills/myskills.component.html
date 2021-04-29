@@ -1,0 +1,15 @@
+<div [ngClass]="{'container':true,'darkBackground':darkModeOn}">
+
+    <div class="centerContent">
+        <h1  [ngClass]="{'blackColor':!darkModeOn,'myProjectHeading':true}">
+           My Skills
+            <!-- <mat-icon>code</mat-icon> -->
+        </h1>
+    </div>
+    <div>
+        <div class="projectsContainer" >
+          <app-myskill [skill]="skill" *ngFor="let skill of skills"></app-myskill>
+        </div>
+    </div>
+
+</div>
