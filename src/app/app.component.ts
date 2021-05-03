@@ -1,6 +1,9 @@
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { SwUpdate } from '@angular/service-worker';
 import { AppstateService } from './services/appstate.service';
+import { AskUserConfirmationComponent } from './shared/ask-user-confirmation/ask-user-confirmation.component';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +17,12 @@ export class AppComponent implements OnInit {
   
   darkModeOn :boolean =false;
 
-  constructor(private overlayContainer:OverlayContainer,private appStateService:AppstateService){}
+  constructor(
+    private overlayContainer:OverlayContainer,
+    private appStateService:AppstateService,
+    private swUpdate:SwUpdate,
+    private dialog:MatDialog
+    ){}
 
   ngOnInit()
   {
@@ -22,6 +30,29 @@ export class AppComponent implements OnInit {
     if(darkModeFromLocalStorage && darkModeFromLocalStorage == "true"){
       this.darkModeOn = true;
       this.appStateService.darkModeBehaviorSubject.next(this.darkModeOn);
+      this.updateThemeForModals();
+    }
+
+    if(this.swUpdate.isEnabled)
+    {
+      this.swUpdate.available.subscribe(()=>{
+
+        // Add confirm modal here
+        const dialogRef=this.dialog.open(AskUserConfirmationComponent,{
+          data:"New updates available. Click yes to load ",
+          height:'160px',
+          width:'auto',
+          minWidth:'300px',
+          disableClose:true
+        })
+        dialogRef.afterClosed().subscribe((response:boolean)=>{
+          if(response)
+          {
+            window.location.reload();
+          }
+        })
+
+      })
     }
 
   }
@@ -42,6 +73,11 @@ export class AppComponent implements OnInit {
 
     //For overlay elements like mat dialog and dynamically created elements
     //as they are not in app hierarchy
+    this.updateThemeForModals();
+    
+  }
+  updateThemeForModals()
+  {
     const classesOfOverlayElements = this.overlayContainer.getContainerElement().classList;
 
     if(this.darkModeOn)
@@ -52,7 +88,6 @@ export class AppComponent implements OnInit {
     {
       classesOfOverlayElements.remove("darkMode");
     }
-    
   }
 
 }

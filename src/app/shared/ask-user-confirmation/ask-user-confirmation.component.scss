@@ -1,0 +1,19 @@
+.reverse-row{
+    display: flex;
+    flex-direction: row-reverse;
+}
+p{
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+.noButton{
+    color: red;
+    margin-left: 10px;
+}
+
+.yesButton{
+    background-color: royalblue;color: white;
+}
+button:hover{
+    box-shadow: 0px 0px 20px grey;
+}
