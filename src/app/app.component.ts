@@ -1,9 +1,11 @@
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { SwUpdate } from '@angular/service-worker';
 import { AppstateService } from './services/appstate.service';
 import { AskUserConfirmationComponent } from './shared/ask-user-confirmation/ask-user-confirmation.component';
+import { CustomSnackbarComponent } from './shared/custom-snackbar/custom-snackbar.component';
 
 @Component({
   selector: 'app-root',
@@ -21,11 +23,15 @@ export class AppComponent implements OnInit {
     private overlayContainer:OverlayContainer,
     private appStateService:AppstateService,
     private swUpdate:SwUpdate,
-    private dialog:MatDialog
+    private dialog:MatDialog,
+    private snackbar:MatSnackBar
     ){}
 
   ngOnInit()
   {
+
+    
+    //Checking if user has dark mode before if user is reloading or opening again from localhost
     const darkModeFromLocalStorage = localStorage.getItem("darkMode");
     if(darkModeFromLocalStorage && darkModeFromLocalStorage == "true"){
       this.darkModeOn = true;
@@ -33,6 +39,7 @@ export class AppComponent implements OnInit {
       this.updateThemeForModals();
     }
 
+    //this checks o=for the new updates of application related to PWA
     if(this.swUpdate.isEnabled)
     {
       this.swUpdate.available.subscribe(()=>{
@@ -55,6 +62,12 @@ export class AppComponent implements OnInit {
       })
     }
 
+    //For showing snackbar to user after 5 seconds that this application also supports offline.
+    setTimeout(()=>{
+      this.showSnackbar();
+    },5000)
+
+
   }
 
 
@@ -76,6 +89,18 @@ export class AppComponent implements OnInit {
     this.updateThemeForModals();
     
   }
+
+  showSnackbar(){
+    this.snackbar.openFromComponent(CustomSnackbarComponent,{
+      data:"Use the top right menu button to explore.",
+      verticalPosition:"top",
+      duration:3000,
+      horizontalPosition:"right",
+      panelClass:this.darkModeOn?'darkBackgroundForSnackbar':'whiteackgroundForSnackbar'
+    
+    })
+  }
+
   updateThemeForModals()
   {
     const classesOfOverlayElements = this.overlayContainer.getContainerElement().classList;

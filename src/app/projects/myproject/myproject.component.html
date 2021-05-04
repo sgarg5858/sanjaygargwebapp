@@ -1,6 +1,6 @@
 <mat-card class="projectcard">
     <mat-card-header>
-        <mat-card-title>{{project.name}}</mat-card-title>
+        <mat-card-title [ngClass]="{'yellowColorClass':darkModeOn,'blueColorClass':!darkModeOn}">{{project.name}}</mat-card-title>
         <mat-card-subtitle>{{project.projectInfo}}</mat-card-subtitle>
     </mat-card-header>
 

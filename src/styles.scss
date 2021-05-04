@@ -32,3 +32,22 @@ $angular-dark-theme: mat-dark-theme(
 .darkMode {
   @include angular-material-theme($angular-dark-theme);
 }
+.darkBackgroundForSnackbar{
+  background: #212121 !important;
+  background-color:#212121 !important;
+  color: rgba(255, 200, 0, 1) !important;
+}
+
+.whiteackgroundForSnackbar{
+  background: white !important;
+  background-color: white !important;
+  color: rgba(60, 100, 180, 1);
+}
+
+.yellowColorClass{
+  color:  rgba(255, 200, 0, 1);
+}
+
+.blueColorClass{
+  color: rgba(60, 100, 180, 1);
+}

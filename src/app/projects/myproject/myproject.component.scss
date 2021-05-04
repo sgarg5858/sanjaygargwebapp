@@ -1,11 +1,8 @@
-mat-card-title{
-    color: dodgerblue;
-}
+
 details{
     margin-top: 10px;
 }
 summary{
-    color: dodgerblue;
     font-size: 16px;
 }
 
@@ -15,7 +12,6 @@ summary{
     box-shadow: 0px 0px 50px grey;
     min-height: 130px !important;
     border-radius: 8px;
-    border-left:  5px solid dodgerblue;
     width: 400px ;
     margin: 20px ;
 }
@@ -89,6 +85,4 @@ summary{
 }
 .role-list{
     list-style: decimal;
-}
-.role-item{
 }
