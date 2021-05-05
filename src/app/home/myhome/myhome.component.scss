@@ -1,9 +1,27 @@
+@keyframes learn {
+    0% {opacity: 0;}
+    10% {opacity: 0.1}
+    20% {opacity: 0.2}
+    30% {opacity: 0.3;}
+    40% {opacity: 0.4;}
+    50% {opacity: 0.5}
+    60% {opacity: 0.6;}
+    70% {opacity: 0.7;}
+    80% {opacity: 0.8;}
+    90% {opacity: 0.9;}
+    100% {opacity: 1.0}
+   }
+
+
 .card{
     display: flex;
     flex-direction: row;
     min-height: 40vh;
     width:550px;
     border-radius: 12px;
+    animation-name: learn;
+    animation-duration: 1.5s;
+    opacity: 1;
     // padding: 0px
     
 }
@@ -110,9 +128,9 @@
     font-size: 16px;
 }
 
-img:hover{
-    transform: scale(1.1);
+.takeFullHeightAndCenterForImage:hover{
+    transform: rotate(3600deg);
     // transition-property: transform;
-    transition-duration: .5s;
+    transition-duration: 10s;
     transition-timing-function: linear;
 }

@@ -16,3 +16,10 @@ mat-toolbar{
     height: 64px;
     max-height: 64px;
 }
+
+.profilepicture:hover{
+    transform: rotate(3600deg);
+    // transition-property: transform;
+    transition-duration: 10s;
+    transition-timing-function: linear;
+}

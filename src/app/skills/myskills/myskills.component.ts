@@ -21,10 +21,12 @@ export class MyskillsComponent implements OnInit,OnDestroy {
     {name:"Angular",url:'../../../assets/angular.png'},
     {name:"Rxjs",url:'../../../assets/rxjs.svg'},
     {name:"Ngrx",url:'../../../assets/ngrx.svg'},
+    {name:"PWA",url:'../../../assets/pwa.svg'},
+    {name:"Typescript",url:'../../../assets/typescript.png'},
     {name:"Javascript",url:'../../../assets/node.png'},
     {name:"Html5",url:'../../../assets/html.png'},
     {name:"CSS3",url:'../../../assets/css.png'},
-    {name:"PWA",url:'../../../assets/pwa.svg'},
+    
   ]
 
   ngOnInit(): void {

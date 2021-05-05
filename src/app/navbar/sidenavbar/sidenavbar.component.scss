@@ -1,7 +1,4 @@
 
-.addingCursor{
-    cursor: pointer;
-}
 .yellowColor{
     color: rgb(255, 193, 7);
     cursor: pointer;
@@ -11,9 +8,20 @@
     color:blue;
     cursor: pointer;
 }
-.centeringContent{
+.centeringContentForNormalMode{
     display: flex !important;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    color: rgba(60, 100, 180, 1) !important;
+}
+
+.centeringContentForDarkMode{
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: rgba(255, 200, 0, 1) !important;
 }

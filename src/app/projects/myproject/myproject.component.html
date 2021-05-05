@@ -14,7 +14,7 @@
         <details >
             <summary>Tech Stack :</summary>
                 <div class="skill-list">
-                    <mat-card class="skillcard"
+                    <mat-card [class]="darkModeOn?'yellowskillcard':'blueskillcard'"
                      
                     *ngFor="let tech of project.techstack;let i=index">
                         {{tech}}

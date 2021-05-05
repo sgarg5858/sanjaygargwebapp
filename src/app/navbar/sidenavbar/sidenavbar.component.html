@@ -1,5 +1,5 @@
 <mat-list role="list">
-    <mat-list-item  class="centeringContent" role="button" (click)="closeSideNav()">
+    <mat-list-item  [class]="darkModeOn ? 'centeringContentForDarkMode' : 'centeringContentForNormalMode'" role="button" (click)="closeSideNav()">
         <mat-icon 
         class=" addingCursor" 
         >
@@ -11,28 +11,27 @@
 
    
 
-    <mat-list-item class="centeringContent addingCursor" role="button" (click)="navigate('home')" >
+    <mat-list-item [class]="darkModeOn ? 'centeringContentForDarkMode' : 'centeringContentForNormalMode'" role="button" (click)="navigate('home')" >
         <span>Home</span>
     </mat-list-item>
 
     <mat-divider></mat-divider>
 
-    <mat-list-item class="centeringContent addingCursor" role="button" (click)="navigate('projects')" >
+    <mat-list-item [class]="darkModeOn ? 'centeringContentForDarkMode' : 'centeringContentForNormalMode'" role="button" (click)="navigate('projects')" >
         Projects
     </mat-list-item>
 
     <mat-divider></mat-divider>
 
-    <mat-list-item class="centeringContent addingCursor" (click)="navigate('skills')" role="button" >
+    <mat-list-item [class]="darkModeOn ? 'centeringContentForDarkMode' : 'centeringContentForNormalMode'" (click)="navigate('skills')" role="button" >
         Skills
     </mat-list-item>
 
     <mat-divider></mat-divider>
 
-    <mat-list-item class="centeringContent" role="button" >
+    <mat-list-item [class]="darkModeOn ? 'centeringContentForDarkMode' : 'centeringContentForNormalMode'" role="button" >
         
         <mat-icon  
-        [class]="darkModeOn ? 'yellowColorClass': 'blueColorClass' " 
         (click)="changeTheme()"
             >
             {{ darkModeOn ? 'wb_sunny' : 'bedtime'}}
