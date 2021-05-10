@@ -1,17 +1,3 @@
-@keyframes learn {
-    0% {opacity: 0;}
-    10% {opacity: 0.1}
-    20% {opacity: 0.2}
-    30% {opacity: 0.3;}
-    40% {opacity: 0.4;}
-    50% {opacity: 0.5}
-    60% {opacity: 0.6;}
-    70% {opacity: 0.7;}
-    80% {opacity: 0.8;}
-    90% {opacity: 0.9;}
-    100% {opacity: 1.0}
-   }
-
 
 .skillcard{
     margin: 20px;
@@ -22,7 +8,7 @@
     align-items: center;
     box-shadow: 3px 3px 10px grey;
     animation-name: learn;
-    animation-duration: 2s;
+    animation-duration: 1s;
     opacity: 1;
 }
 .whiteColor{

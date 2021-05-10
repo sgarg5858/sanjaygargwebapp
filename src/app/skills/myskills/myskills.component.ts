@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
 import { AppstateService } from 'src/app/services/appstate.service';
@@ -18,14 +18,14 @@ export class MyskillsComponent implements OnInit,OnDestroy {
   darkModeOn:boolean=false;
   darkModeSubscription:Subscription;
   skills:Skill[]=[
-    {name:"Angular",url:'../../../assets/angular.png'},
-    {name:"Rxjs",url:'../../../assets/rxjs.svg'},
-    {name:"Ngrx",url:'../../../assets/ngrx.svg'},
-    {name:"PWA",url:'../../../assets/pwa.svg'},
-    {name:"Typescript",url:'../../../assets/typescript.png'},
-    {name:"Javascript",url:'../../../assets/node.png'},
-    {name:"Html5",url:'../../../assets/html.png'},
-    {name:"CSS3",url:'../../../assets/css.png'},
+    {name:"Angular",url:'../../../assets/angular.png',placeholder:'../../../assets/placeholder.png'},
+    {name:"Rxjs",url:'../../../assets/rxjs.svg',placeholder:'../../../assets/placeholder.png'},
+    {name:"Ngrx",url:'../../../assets/ngrx.svg',placeholder:'../../../assets/placeholder.png'},
+    {name:"PWA",url:'../../../assets/pwa.svg',placeholder:'../../../assets/placeholder.png'},
+    {name:"Typescript",url:'../../../assets/typescript.png',placeholder:'../../../assets/placeholder.png'},
+    {name:"Javascript",url:'../../../assets/node.png',placeholder:'../../../assets/placeholder.png'},
+    {name:"Html5",url:'../../../assets/html.png',placeholder:'../../../assets/placeholder.png'},
+    {name:"CSS3",url:'../../../assets/css.png',placeholder:'../../../assets/placeholder.png'},
     
   ]
 
@@ -40,5 +40,6 @@ export class MyskillsComponent implements OnInit,OnDestroy {
   {
     this.darkModeSubscription.unsubscribe();
   }
+  
 
 }
