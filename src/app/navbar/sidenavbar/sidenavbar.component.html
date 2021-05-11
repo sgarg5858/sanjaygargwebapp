@@ -1,5 +1,5 @@
-<mat-list role="list">
-    <mat-list-item  [class]="darkModeOn ? 'centeringContentForDarkMode' : 'centeringContentForNormalMode'" role="button" (click)="closeSideNav()">
+<mat-list role="list" >
+    <mat-list-item tabindex="0" [class]="darkModeOn ? 'centeringContentForDarkMode' : 'centeringContentForNormalMode'" role="button"  (click)="closeSideNav()">
         <mat-icon 
         class=" addingCursor" 
         >
@@ -11,25 +11,25 @@
 
    
 
-    <mat-list-item [class]="darkModeOn ? 'centeringContentForDarkMode' : 'centeringContentForNormalMode'" role="button" (click)="navigate('home')" >
+    <mat-list-item  tabindex="0" [class]="darkModeOn ? 'centeringContentForDarkMode' : 'centeringContentForNormalMode'" role="navigate" (click)="navigate('home')" >
         <span>Home</span>
     </mat-list-item>
 
     <mat-divider></mat-divider>
 
-    <mat-list-item [class]="darkModeOn ? 'centeringContentForDarkMode' : 'centeringContentForNormalMode'" role="button" (click)="navigate('projects')" >
+    <mat-list-item  tabindex="0" [class]="darkModeOn ? 'centeringContentForDarkMode' : 'centeringContentForNormalMode'" role="navigate" (click)="navigate('projects')" >
         Projects
     </mat-list-item>
 
     <mat-divider></mat-divider>
 
-    <mat-list-item [class]="darkModeOn ? 'centeringContentForDarkMode' : 'centeringContentForNormalMode'" (click)="navigate('skills')" role="button" >
+    <mat-list-item  tabindex="0" [class]="darkModeOn ? 'centeringContentForDarkMode' : 'centeringContentForNormalMode'" (click)="navigate('skills')" role="navigate" >
         Skills
     </mat-list-item>
 
     <mat-divider></mat-divider>
 
-    <mat-list-item [class]="darkModeOn ? 'centeringContentForDarkMode' : 'centeringContentForNormalMode'" role="button" >
+    <mat-list-item tabindex="0" [class]="darkModeOn ? 'centeringContentForDarkMode' : 'centeringContentForNormalMode'" role="button" >
         
         <mat-icon  
         (click)="changeTheme()"
